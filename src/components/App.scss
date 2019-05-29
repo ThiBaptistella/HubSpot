@@ -1,8 +1,9 @@
-$navy: #001e38;
-$green: #15b78f;
+$text: #001e38;
+$border: #ccc;
+$dropdowBtn: #f7f7f7;
 
 html {
-  background-color: $navy;
+  background-color: transparent;
 }
 
 body {
@@ -11,25 +12,68 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: monospace;
+
 }
 
-h1 {
-  color: $green;
-  font-weight: bold;
-  font-size: 3.5rem;
 
-  &:after {
-    content: '👋';
-    display: inline-block;
-    transform: rotate(-20deg);
-    animation: wave .75s infinite linear alternate;
+.container {
+  width: 978px;
+  .search-container {
+    border: 1px solid $border;
+    width: 100%;
+    height: auto;
   }
+  .topnav {
+    background-color: transparent;
+    overflow: hidden;
+    padding: 5px;
+    a {
+      float: left;
+      display: block;
+      color: $text;
+      text-align: center;
+      padding: 14px 16px;
+      margin: 5px;
+      text-decoration: none;
+      font-size: 17px;
+      cursor: pointer;
+    }
+    .dropdown {
+      float: left;
+      overflow: hidden;
+      .dropbtn {
+        font-size: 17px; 
+        border-bottom: 2px solid $border;
+        outline: none;
+        color: $text;
+        padding: 14px 16px;
+        background-color: $dropdowBtn;
+        margin: 5px;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        border: 1px solid $border;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+      }
+    }
+  }
+  
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+
 }
 
-@keyframes wave {
-  100% {
-    transform: rotate(20deg);
-  }
-}
