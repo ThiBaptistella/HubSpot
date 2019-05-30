@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 
 
 import Search from './header/Search';
-import List from './results/List';
+import Quotes from './quote/Quotes';
+import QuotesChuck from './quote/QuotesChuck';
 
 import './App.scss';
 
@@ -11,7 +12,8 @@ class App extends Component {
   render() {
     return <div className="container">
       <Search />
-      <List />
+      <QuotesChuck />
+      <Quotes />
     </div>
   }
 }
